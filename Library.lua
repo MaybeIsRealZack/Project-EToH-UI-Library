@@ -258,17 +258,17 @@ local Library = {
     OriginalMinSize = Vector2.new(480, 360),
     MinSize = Vector2.new(480, 360),
     DPIScale = 1,
-    CornerRadius = 6,
+    CornerRadius = 0,
 
     --// Scheme \\--
     IsLightTheme = false,
     Scheme = {
-        BackgroundColor = Color3.fromRGB(8, 8, 8),
-        MainColor = Color3.fromRGB(16, 16, 16),
-        AccentColor = Color3.fromRGB(230, 230, 230),
-        OutlineColor = Color3.fromRGB(28, 28, 28),
+        BackgroundColor = Color3.fromRGB(0, 0, 0),
+        MainColor = Color3.fromRGB(18, 18, 18),
+        AccentColor = Color3.fromRGB(255, 214, 0),
+        OutlineColor = Color3.fromRGB(255, 255, 255),
         FontColor = Color3.new(1, 1, 1),
-        Font = Font.fromEnum(Enum.Font.GothamMedium),
+        Font = Font.fromEnum(Enum.Font.GothamBlack),
 
         RedColor = Color3.fromRGB(255, 50, 50),
         DestructiveColor = Color3.fromRGB(220, 38, 38),
@@ -351,6 +351,7 @@ local Templates = {
     },
     UIStroke = {
         ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+        Thickness = 2,
     },
 
     --// Library \\--
@@ -369,11 +370,11 @@ local Templates = {
         SearchbarSize = UDim2.fromScale(1, 1),
         GlobalSearch = false,
 
-        CornerRadius = 6,
+        CornerRadius = 0,
         NotifySide = "Right",
         ShowCustomCursor = true,
 
-        Font = Enum.Font.GothamMedium,
+        Font = Enum.Font.GothamBlack,
         ToggleKeybind = Enum.KeyCode.RightControl,
 
         ShowMobileButtons = true,
@@ -1759,14 +1760,14 @@ end
 function Library:AddOutline(Frame: GuiObject)
     local OutlineStroke = New("UIStroke", {
         Color = "OutlineColor",
-        Thickness = 1,
+        Thickness = 2,
         ZIndex = 2,
         Parent = Frame,
     })
     local ShadowStroke = New("UIStroke", {
         Color = "DarkColor",
-        Thickness = 1,
-        Transparency = 0.5,
+        Thickness = 2,
+        Transparency = 0,
         ZIndex = 1,
         Parent = Frame,
     })
