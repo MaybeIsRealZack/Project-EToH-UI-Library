@@ -258,17 +258,17 @@ local Library = {
     OriginalMinSize = Vector2.new(480, 360),
     MinSize = Vector2.new(480, 360),
     DPIScale = 1,
-    CornerRadius = 4,
+    CornerRadius = 6,
 
     --// Scheme \\--
     IsLightTheme = false,
     Scheme = {
-        BackgroundColor = Color3.fromRGB(15, 15, 15),
-        MainColor = Color3.fromRGB(25, 25, 25),
-        AccentColor = Color3.fromRGB(125, 85, 255),
-        OutlineColor = Color3.fromRGB(40, 40, 40),
+        BackgroundColor = Color3.fromRGB(8, 8, 8),
+        MainColor = Color3.fromRGB(16, 16, 16),
+        AccentColor = Color3.fromRGB(230, 230, 230),
+        OutlineColor = Color3.fromRGB(28, 28, 28),
         FontColor = Color3.new(1, 1, 1),
-        Font = Font.fromEnum(Enum.Font.Code),
+        Font = Font.fromEnum(Enum.Font.GothamMedium),
 
         RedColor = Color3.fromRGB(255, 50, 50),
         DestructiveColor = Color3.fromRGB(220, 38, 38),
@@ -369,11 +369,11 @@ local Templates = {
         SearchbarSize = UDim2.fromScale(1, 1),
         GlobalSearch = false,
 
-        CornerRadius = 4,
+        CornerRadius = 6,
         NotifySide = "Right",
         ShowCustomCursor = true,
 
-        Font = Enum.Font.Code,
+        Font = Enum.Font.GothamMedium,
         ToggleKeybind = Enum.KeyCode.RightControl,
 
         ShowMobileButtons = true,
@@ -1765,7 +1765,8 @@ function Library:AddOutline(Frame: GuiObject)
     })
     local ShadowStroke = New("UIStroke", {
         Color = "DarkColor",
-        Thickness = 1.5,
+        Thickness = 1,
+        Transparency = 0.5,
         ZIndex = 1,
         Parent = Frame,
     })
@@ -2219,7 +2220,7 @@ function Library:AddDraggableMenu(Name: string)
         Parent = Holder,
     })
     New("UIListLayout", {
-        Padding = UDim.new(0, 7),
+        Padding = UDim.new(0, 9),
         Parent = Container,
     })
     New("UIPadding", {
@@ -3150,7 +3151,7 @@ do
             New("UIListLayout", {
                 FillDirection = Enum.FillDirection.Horizontal,
                 HorizontalFlex = Enum.UIFlexAlignment.Fill,
-                Padding = UDim.new(0, 9),
+                Padding = UDim.new(0, 11),
                 Parent = Holder,
             })
 
@@ -3982,7 +3983,7 @@ do
         })
         New("UIListLayout", {
             FillDirection = Enum.FillDirection.Horizontal,
-            Padding = UDim.new(0, 6),
+            Padding = UDim.new(0, 8),
             Parent = ColorHolder,
         })
 
@@ -4075,7 +4076,7 @@ do
         New("UIListLayout", {
             FillDirection = Enum.FillDirection.Horizontal,
             HorizontalFlex = Enum.UIFlexAlignment.Fill,
-            Padding = UDim.new(0, 8),
+            Padding = UDim.new(0, 10),
             Parent = InfoHolder,
         })
 
@@ -4603,7 +4604,7 @@ do
             New("UIListLayout", {
                 FillDirection = Enum.FillDirection.Horizontal,
                 HorizontalAlignment = Enum.HorizontalAlignment.Right,
-                Padding = UDim.new(0, 6),
+                Padding = UDim.new(0, 8),
                 Parent = TextLabel,
             })
         end
@@ -4741,7 +4742,7 @@ do
         New("UIListLayout", {
             FillDirection = Enum.FillDirection.Horizontal,
             HorizontalFlex = Enum.UIFlexAlignment.Fill,
-            Padding = UDim.new(0, 9),
+            Padding = UDim.new(0, 11),
             Parent = Holder,
         })
 
@@ -5104,7 +5105,7 @@ do
         New("UIListLayout", {
             FillDirection = Enum.FillDirection.Horizontal,
             HorizontalAlignment = Enum.HorizontalAlignment.Right,
-            Padding = UDim.new(0, 6),
+            Padding = UDim.new(0, 8),
             Parent = Label,
         })
 
@@ -5359,7 +5360,7 @@ do
         New("UIListLayout", {
             FillDirection = Enum.FillDirection.Horizontal,
             HorizontalAlignment = Enum.HorizontalAlignment.Right,
-            Padding = UDim.new(0, 6),
+            Padding = UDim.new(0, 8),
             Parent = Label,
         })
 
@@ -7697,7 +7698,7 @@ do
             })
 
             DepboxList = New("UIListLayout", {
-                Padding = UDim.new(0, 8),
+                Padding = UDim.new(0, 10),
                 Parent = DepboxContainer,
             })
         end
@@ -7852,7 +7853,7 @@ do
             Library:AddOutline(DepGroupboxContainer)
 
             DepGroupboxList = New("UIListLayout", {
-                Padding = UDim.new(0, 8),
+                Padding = UDim.new(0, 10),
                 Parent = DepGroupboxContainer,
             })
             New("UIPadding", {
@@ -8109,7 +8110,7 @@ function Library:Notify(...)
         })
     )
     New("UIListLayout", {
-        Padding = UDim.new(0, 4),
+        Padding = UDim.new(0, 5),
         Parent = Holder,
     })
     New("UIPadding", {
@@ -8130,7 +8131,7 @@ function Library:Notify(...)
     
     if Data.BigIcon then
         New("UIListLayout", {
-            Padding = UDim.new(0, 8),
+            Padding = UDim.new(0, 10),
             FillDirection = Enum.FillDirection.Horizontal,
             VerticalAlignment = Enum.VerticalAlignment.Center,
             Parent = ContentContainer,
@@ -8160,7 +8161,7 @@ function Library:Notify(...)
         Parent = ContentContainer,
     })
     New("UIListLayout", {
-        Padding = UDim.new(0, 4),
+        Padding = UDim.new(0, 5),
         Parent = TextContainer,
     })
     
@@ -8551,7 +8552,7 @@ function Library:CreateWindow(WindowInfo)
             FillDirection = Enum.FillDirection.Horizontal,
             HorizontalAlignment = Enum.HorizontalAlignment.Center,
             VerticalAlignment = Enum.VerticalAlignment.Center,
-            Padding = UDim.new(0, 6),
+            Padding = UDim.new(0, 8),
             Parent = TitleHolder,
         })
 
@@ -8602,7 +8603,7 @@ function Library:CreateWindow(WindowInfo)
             FillDirection = Enum.FillDirection.Horizontal,
             HorizontalAlignment = Enum.HorizontalAlignment.Left,
             VerticalAlignment = Enum.VerticalAlignment.Center,
-            Padding = UDim.new(0, 8),
+            Padding = UDim.new(0, 10),
             Parent = RightWrapper,
         })
 
@@ -9160,7 +9161,7 @@ function Library:CreateWindow(WindowInfo)
                 Parent = TabContainer,
             })
             New("UIListLayout", {
-                Padding = UDim.new(0, 2),
+                Padding = UDim.new(0, 3),
                 Parent = TabLeft,
             })
             New("UIPadding", {
@@ -9195,7 +9196,7 @@ function Library:CreateWindow(WindowInfo)
                 Parent = TabContainer,
             })
             New("UIListLayout", {
-                Padding = UDim.new(0, 2),
+                Padding = UDim.new(0, 3),
                 Parent = TabRight,
             })
             New("UIPadding", {
@@ -9447,7 +9448,7 @@ function Library:CreateWindow(WindowInfo)
                 Parent = if ParentObj.Type == "Groupbox" then ParentObj.Container else (Info.Side == 1 and TabLeft or TabRight),
             })
             New("UIListLayout", {
-                Padding = UDim.new(0, 6),
+                Padding = UDim.new(0, 8),
                 Parent = BoxHolder,
             })
             New("UIPadding", {
@@ -9547,7 +9548,7 @@ function Library:CreateWindow(WindowInfo)
                     FillDirection = Enum.FillDirection.Horizontal,
                     HorizontalAlignment = Enum.HorizontalAlignment.Center,
                     VerticalAlignment = Enum.VerticalAlignment.Center,
-                    Padding = UDim.new(0, 8),
+                    Padding = UDim.new(0, 10),
                     Parent = ButtonContent,
                 })
 
@@ -9592,7 +9593,7 @@ function Library:CreateWindow(WindowInfo)
                     Parent = TabboxHolder,
                 })
                 local List = New("UIListLayout", {
-                    Padding = UDim.new(0, 8),
+                    Padding = UDim.new(0, 10),
                     Parent = Container,
                 })
                 New("UIPadding", {
@@ -9767,7 +9768,7 @@ function Library:CreateWindow(WindowInfo)
                 Parent = Info.Side == 1 and TabLeft or TabRight,
             })
             New("UIListLayout", {
-                Padding = UDim.new(0, 6),
+                Padding = UDim.new(0, 8),
                 Parent = BoxHolder,
             })
             New("UIPadding", {
@@ -9855,7 +9856,7 @@ function Library:CreateWindow(WindowInfo)
                 })
 
                 GroupboxList = New("UIListLayout", {
-                    Padding = UDim.new(0, 8),
+                    Padding = UDim.new(0, 10),
                     Parent = GroupboxContainer,
                 })
                 New("UIPadding", {
@@ -10296,7 +10297,7 @@ function Library:CreateWindow(WindowInfo)
             })
             New("UIListLayout", {
                 HorizontalAlignment = Enum.HorizontalAlignment.Center,
-                Padding = UDim.new(0, 8),
+                Padding = UDim.new(0, 10),
                 VerticalAlignment = Enum.VerticalAlignment.Center,
                 Parent = TabContainer,
             })
@@ -10580,7 +10581,7 @@ function Library:CreateWindow(WindowInfo)
             Parent = InnerContainer,
         })
         local _InnerLayout = New("UIListLayout", {
-            Padding = UDim.new(0, 10),
+            Padding = UDim.new(0, 12),
             SortOrder = Enum.SortOrder.LayoutOrder,
             Parent = InnerContainer,
         })
@@ -10594,7 +10595,7 @@ function Library:CreateWindow(WindowInfo)
             Parent = InnerContainer,
         })
         New("UIListLayout", {
-            Padding = UDim.new(0, 6),
+            Padding = UDim.new(0, 8),
             SortOrder = Enum.SortOrder.LayoutOrder,
             Parent = HeaderContainer,
         })
@@ -10612,7 +10613,7 @@ function Library:CreateWindow(WindowInfo)
             Parent = HeaderContainer,
         })
         New("UIListLayout", {
-            Padding = UDim.new(0, 6),
+            Padding = UDim.new(0, 8),
             FillDirection = Enum.FillDirection.Horizontal,
             VerticalAlignment = Enum.VerticalAlignment.Center,
             SortOrder = Enum.SortOrder.LayoutOrder,
@@ -10673,7 +10674,7 @@ function Library:CreateWindow(WindowInfo)
             Parent = InnerContainer,
         })
         local _DialogContainerLayout = New("UIListLayout", {
-            Padding = UDim.new(0, 8),
+            Padding = UDim.new(0, 10),
             SortOrder = Enum.SortOrder.LayoutOrder,
             Parent = DialogContainer,
         })
@@ -10701,7 +10702,7 @@ function Library:CreateWindow(WindowInfo)
             Parent = InnerContainer,
         })
         New("UIListLayout", {
-            Padding = UDim.new(0, 8),
+            Padding = UDim.new(0, 10),
             FillDirection = Enum.FillDirection.Horizontal,
             HorizontalAlignment = Enum.HorizontalAlignment.Right,
             Wraps = true,
@@ -11386,7 +11387,7 @@ function Library:CreateLoading(LoadingInfo)
         FillDirection = Enum.FillDirection.Horizontal,
         HorizontalAlignment = Enum.HorizontalAlignment.Left,
         VerticalAlignment = Enum.VerticalAlignment.Center,
-        Padding = UDim.new(0, 6),
+        Padding = UDim.new(0, 8),
         Parent = TitleHolder,
     })
     New("UIPadding", {
@@ -11446,7 +11447,7 @@ function Library:CreateLoading(LoadingInfo)
         FillDirection = Enum.FillDirection.Vertical,
         HorizontalAlignment = Enum.HorizontalAlignment.Center,
         VerticalAlignment = Enum.VerticalAlignment.Center,
-        Padding = UDim.new(0, 12),
+        Padding = UDim.new(0, 15),
         Parent = InnerContent,
     })
 
@@ -11545,7 +11546,7 @@ function Library:CreateLoading(LoadingInfo)
         Parent = SideBar,
     })
     local SidebarList = New("UIListLayout", {
-        Padding = UDim.new(0, 8),
+        Padding = UDim.new(0, 10),
         SortOrder = Enum.SortOrder.LayoutOrder,
         Parent = SidebarScrolling,
     })
@@ -11638,7 +11639,7 @@ function Library:CreateLoading(LoadingInfo)
         Parent = ErrorFrame,
     })
     New("UIListLayout", {
-        Padding = UDim.new(0, 8),
+        Padding = UDim.new(0, 10),
         FillDirection = Enum.FillDirection.Horizontal,
         HorizontalAlignment = Enum.HorizontalAlignment.Right,
         VerticalAlignment = Enum.VerticalAlignment.Center,
